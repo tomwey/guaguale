@@ -1,0 +1,50 @@
+zh:
+    activerecord:
+        models:
+            ticket: "奖券"
+            customer: "商家"
+        attributes:
+            ticket:
+                expire_start_at: "有效期开始日"
+                expire_end_at: "有效期截止日"
+                avatar: "图片"
+            customer:
+                name: "商家姓名"
+                tel: "手机"
+                comp_name: "公司名称"
+                info: "商家简介"
+                address: "商家地址"
+                email: "邮箱"
+                remember_me: "记住登录状态"
+        errors:
+            models:
+                ticket:  奖券
+            template:
+                body:  下面的字段验证有误
+                header:
+                    one:  保存时有一个字段验证错误
+                    other: "保存%{model}时有%{count}个字段验证失败"
+            messages:
+                inclusion: "不包含于列表中"
+                exclusion: "是保留关键字"
+                invalid: "是无效的"
+                confirmation: "与确认值不匹配"
+                accepted: "必须是可被接受的"
+                empty: "不能留空"
+                blank: "不能为空字符"
+                too_long: "过长（最长为 %{count} 个字符）"
+                too_short: "过短（最短为 %{count} 个字符）"
+                wrong_length: "长度非法（必须为 %{count} 个字符）"
+                taken: "已经被使用"
+                not_a_number: "不是数字"
+                not_an_integer: "必须是整数"
+                greater_than: "必须大于 %{count}"
+                greater_than_or_equal_to: "必须大于或等于 %{count}"
+                equal_to: "必须等于 %{count}"
+                less_than: "必须小于 %{count}"
+                less_than_or_equal_to: "必须小于或等于 %{count}"
+                odd: "必须为单数"
+                even: "必须为双数"
+                record_invalid: "校验失败: %{errors}"
+                taken: 已占用
+                

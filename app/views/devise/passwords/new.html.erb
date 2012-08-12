@@ -1,0 +1,19 @@
+<h2>忘记了密码?</h2>
+
+<div class="row">
+	<div class="span4 offset3">
+		<div class="well">
+			<%= form_for(resource, :as => resource_name, :url => password_path(resource_name), :html => { :method => :post }) do |f| %>
+			  <%= devise_error_messages! %>
+
+			  <div><%= f.label :email, "邮箱" %><br />
+			  <%= f.email_field :email %></div>
+
+			  <div><%= f.submit "找回密码", class:"btn btn-primary" %></div>
+			<% end %>
+		</div>
+	</div>
+	<div class="span3">
+			<%= render :partial => "devise/shared/links" %>
+	</div>
+</div>

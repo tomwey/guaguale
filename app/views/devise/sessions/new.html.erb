@@ -1,0 +1,22 @@
+<h2 class="page-header">用户登录</h2>
+<div class="row">
+	<div class="span3 offset3">
+		<div class="well">
+		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+		  <%= f.label :email, "邮箱" %>
+		  <%= f.email_field :email %>
+
+		  <%= f.label :password, "密码" %>
+		  <%= f.password_field :password %> <br />
+
+		  <%= f.submit "登录", class:"btn btn-primary" %>
+		<% end %>
+		</div>
+	</div>
+	<div class="span3">
+		<p>还没有账号？</p>
+		<%= render :partial => "devise/shared/links" %>
+	</div>
+</div>
+
+

@@ -1,0 +1,15 @@
+<div class="page-header">
+	<h1>#<%= @ticket.id %>-奖券的详细信息</h1>
+</div>
+
+<div class="span6">
+	<div class="pull-left"><%= image_tag(@ticket.avatar.url(:medium)) %></div>
+	<div class="ticket-detail-info offset3">
+		<p><span class="t">消费码:</span> <%= @ticket.token %></p>
+		<p><span>有效期开始日:</span> <%= @ticket.expire_start_at %></p>
+		<p class="last-p"><span>有效期截止日:</span> <%= @ticket.expire_end_at %></p>
+		<div><a href="javascript:history.go(-1)" class="btn">返回</a></div>
+	</div>
+</div>
+
+

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Guaguale</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+	<%= render 'layouts/shim' %>
+</head>
+<body>
+	<%= render 'layouts/header' %>
+	<div class="container">
+		<% flash.each do |key,msg| %>
+			<div class="alert alert-<%= key%>">
+				<a class="close" href="#" data-dismiss="alert">&times;</a><%= msg %>
+			</div>
+		<% end %>
+		<div class="row">
+			<div class="span2">
+				<%= render 'layouts/sidebar' %>
+			</div>
+			<div class="span10">
+				<%= yield %>
+			</div>
+		</div>
+		<%= render 'layouts/footer' %>
+	</div>
+	<!-- <%= render 'layouts/bootstrap_script' %> -->
+	<script type="text/javascript">
+		$('.datepicker').datepicker({
+			format:'yyyy-mm-dd'
+		})
+	</script>
+</body>
+</html>

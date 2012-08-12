@@ -1,0 +1,49 @@
+<div class="page-header">
+	<h2>所有的奖券</h2>
+</div>
+	
+<%= render 'search_form' %>
+	
+<%= render 'layouts/pager' %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>消费码</th>
+			<th>广告图片</th>
+			<th>商家名称</th>
+			<th>有效期开始日</th>
+			<th>有效期截止日</th>
+			<th>奖券添加日期</th>
+			<th>是否消费</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tickets.each do |ticket| %>
+			<tr>
+				<td><%= link_to ticket.id, [:cpanel, ticket] %></td>
+				<td><%= ticket.token %></td>
+				<td>
+					<% if ticket.avatar.exists? %>
+						<%= image_tag(ticket.avatar.url(:thumb)) %>
+					<% end %>
+				</td>
+				<td><%= ticket.customer.comp_name if ticket.customer.present? %></td>
+				<td><%= ticket.expire_start_at %></td>
+				<td><%= ticket.expire_end_at %></td>
+				<td><%= ticket.created_at %></td>
+				<td><%= ticket.state %></td>
+				<td>
+					<%= link_to "编辑", edit_cpanel_ticket_path(ticket), class:"btn btn-mini" %>
+					<%= link_to "删除", [:cpanel, ticket], class:"btn btn-mini btn-danger", 
+														:method => :delete,
+														:confirm => "确定要删除吗？" %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= render 'layouts/pager' %>

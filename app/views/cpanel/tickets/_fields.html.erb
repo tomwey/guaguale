@@ -1,0 +1,27 @@
+	<%= f.label :expire_start_at, "有效期开始日", class:"control-label" %>
+	<div class="controls">
+		<%= f.text_field 'expire_start_at', value: "#{Date.today}", class:"datepicker" %>
+	</div>
+	
+	<%= f.label :expire_start_at, "有效期截止日", class:"control-label" %>
+	<div class="controls">
+		<%= f.text_field 'expire_end_at', value: "#{Date.today + 1}", class:"datepicker" %>
+	</div>
+	
+	<%= f.label :customer_id, '商家名称', class:"control-label" %>
+	<div class="controls">
+		<% if Customer.all.size > 0 %>
+		<%= f.collection_select :customer_id, Customer.all, :id, :name %>
+		<% else %>
+			<%= link_to '添加一个商家', new_cpanel_customer_path, class:"btn btn-primary" %>
+		<% end %>
+	</div>
+	
+	<%= f.label :avatar, "上传奖券图片", class:"control-label" %>
+	<div class="controls">
+	<% unless f.object.new_record? %>
+		<%= image_tag(@ticket.avatar.url(:small), width:100, class:"avatar") %>
+	<% end %>
+	<%= f.file_field :avatar %>
+	</div>
+</div>

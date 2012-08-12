@@ -1,0 +1,37 @@
+<div class="page-header">
+	<h2>所有的商家</h2>
+</div>
+
+<%= render 'layouts/pager' %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>商家名称</th>
+			<th>联系电话</th>
+			<th>商家地址</th>
+			<th>已经激活的奖券数</th>
+			<th>操作</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @customers.each do |customer| %>
+			<tr>
+				<td><%= link_to customer.id, [:cpanel, customer] %></td>
+				<td><%= customer.name %></td>
+				<td><%= customer.tel %></td>
+				<td><%= customer.address %></td>
+				<td><%= customer.tickets.actived.size %></td>
+				<td>
+					<%= link_to "编辑", edit_cpanel_customer_path(customer), class:"btn btn-mini" %>
+					<%= link_to "删除", [:cpanel, customer], class:"btn btn-mini btn-danger", 
+														:method => :delete,
+														:confirm => "确定要删除吗？" %>
+				</td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+<%= render 'layouts/pager' %>

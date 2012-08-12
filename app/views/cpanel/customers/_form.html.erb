@@ -1,0 +1,18 @@
+<div class="row">
+	<div class="span9 well">
+		<%= form_for([:cpanel, @customer], :html => { class: "form-horizontal"} ) do |f| %>
+			<%= render "shared/error_messages", :target => @customer %>
+			<fieldset>
+				<legend><%= legend %></legend>
+				<div class="control-group">
+					<%= render 'fields', :f => f %>
+					<div class="controls">
+						<%= f.submit submit_value, class: "btn btn-primary" %>
+						<!-- <a href="javascript:history.go(-1)" class="btn">返回</a> -->
+						<%= link_to '返回', cpanel_customers_path, class:"btn" %>
+					</div>
+				</div>
+			</fieldset>
+		<% end %>
+	</div>
+</div>

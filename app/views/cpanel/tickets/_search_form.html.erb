@@ -1,0 +1,4 @@
+<%= form_tag cpanel_tickets_path, :method => 'get', class:"form-search well" do  %>
+	<%= text_field_tag :search, params[:search], class: "search-query", placeholder:"输入商家名" %>
+	<button type="submit" class="btn"><i class="icon-search"></i> 搜索</button>
+<% end %>

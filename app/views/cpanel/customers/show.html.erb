@@ -1,0 +1,11 @@
+<div class="page-header">
+	<h2>商家的详细信息</h2>
+</div>
+
+<div class="span6">
+	<div class="offset3">
+		<p><b>商家公司名:</b><%= @customer.comp_name %></p>
+		<p><b>商家简介:</b><%= simple_format @customer.info %></p>
+		<div><a href="javascript:history.go(-1)" class="btn">返回</a></div>
+	</div>
+</div>

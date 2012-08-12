@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  token: MyString
+  active: false
+  visible: false
+  expire_start_at: 2012-06-14 23:02:48
+  expire_end_at: 2012-06-14 23:02:48
+
+two:
+  token: MyString
+  active: false
+  visible: false
+  expire_start_at: 2012-06-14 23:02:48
+  expire_end_at: 2012-06-14 23:02:48
