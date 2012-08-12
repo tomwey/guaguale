@@ -18,7 +18,7 @@ set :use_sudo, false
 set :user, "railsu"
 set :group, "railsu"
 
-default_environment["PATH"] = "/home/railsu/.rvm/rubies/ruby-1.9.3-p194/bin:/usr/local/bin:/usr/bin:/bin:"
+default_environment["PATH"] = "/home/railsu/.rvm/rubies/ruby-1.9.3-p194/bin:/home/railsu/.rvm/gems/ruby-1.9.3-p194@global/bin:/usr/local/bin:/usr/bin:/bin:"
 namespace :deploy do
   desc "restart"
   task :restart do
