@@ -20,4 +20,5 @@ gem 'jquery-rails'
 
 gem 'capistrano'
 gem 'capistrano-ext'
+gem 'libv8', '3.3.10.4'
 

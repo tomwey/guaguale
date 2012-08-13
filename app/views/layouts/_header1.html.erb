@@ -3,10 +3,11 @@
 		<div class="container">
 			<%= link_to '刮刮乐', root_path, class: "brand" %>
 			<ul class="nav pull-right">
-				<% if user_signed_in? %>
+				<% if user_signed_in? && current_user.admin? %>
 					<li><%= link_to current_user.email,cpanel_root_path %></li>
 				<% else %>
-					<li><%= link_to '登录', new_user_session_path %></li>
+					<li><%= link_to '用户登录', new_user_session_path %></li>
+					<li><%= link_to '商家登录', new_customer_session_path %></li>
 				<% end %>
 			</ul>
 		</div>

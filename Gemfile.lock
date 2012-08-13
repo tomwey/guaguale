@@ -159,6 +159,7 @@ DEPENDENCIES
   devise (~> 2.1.0.rc)
   dynamic_form
   jquery-rails
+  libv8 (= 3.3.10.4)
   paperclip (~> 3.0)
   rails (= 3.2.5)
   sass-rails (~> 3.2.3)
