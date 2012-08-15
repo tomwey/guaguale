@@ -1,6 +1,6 @@
 source 'http://ruby.taobao.org'
 
-gem 'rails', '3.2.5'
+gem 'rails', '3.2.7'
 
 gem 'sqlite3'
 gem 'dynamic_form'
@@ -19,6 +19,6 @@ end
 gem 'jquery-rails'
 
 gem 'capistrano'
-gem 'capistrano-ext'
-gem 'libv8', '3.3.10.4'
+#gem 'capistrano-ext'
+#gem 'libv8', '3.3.10.4'
 
