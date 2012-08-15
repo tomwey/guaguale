@@ -1,18 +1,15 @@
 # coding: utf-8
 require 'bundler/capistrano'
-# require 'sidekiq/capistrano'
-
-#require "rvm/capistrano"
-set :rvm_ruby_string, 'ruby-1.9.3-p194'
-set :rvm_type, :user
 
 set :application, "guaguale"
 set :repository, "git://github.com/tomwey/guaguale.git"
 set :branch, "master"
 set :scm, :git
 set :user, "railsu"
+#set :scm_passphrase, "tomwey"
 set :use_sudo, false
 set :deploy_to, "/home/railsu/#{application}"
+set :deploy_via, :remote_cache
 set :runner, "railsu"
 set :git_shallow_clone, 1
 
@@ -48,6 +45,5 @@ namespace :deploy do
     end
     
 end
-# ssh_options[:forward_agent] = true
+ssh_options[:forward_agent] = true
 # default_run_options[:pty] = true
-
