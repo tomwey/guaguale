@@ -1,6 +1,7 @@
 # coding: utf-8
 require 'bundler/capistrano'
 
+set :keep_releases, 5
 set :application, "guaguale"
 set :repository, "git://github.com/tomwey/guaguale.git"
 set :branch, "master"
@@ -28,11 +29,11 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
   
-  desc "Symlink shared resources on each release - not used"
-  task :symlink_shared, :roles => :app do
-    run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
-  end
+  # desc "Symlink shared resources on each release - not used"
+  # task :symlink_shared, :roles => :app do
+  #   run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
+  # end
     
 end
 
-after 'deploy:update_code', 'deploy:symlink_shared'
+#after 'deploy:update_code', 'deploy:symlink_shared'

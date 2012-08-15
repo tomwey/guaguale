@@ -10,7 +10,7 @@ gem 'devise', '~> 2.1.0.rc'
 gem 'cancan'
 
 group :production do 
-	gem 'mysql2'
+	gem 'mysql2', '0.3.11'
 end
 
 group :assets do
