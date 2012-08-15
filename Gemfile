@@ -9,6 +9,10 @@ gem 'paperclip', '~> 3.0'
 gem 'devise', '~> 2.1.0.rc'
 gem 'cancan'
 
+group :production do 
+	gem 'mysql2'
+end
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
