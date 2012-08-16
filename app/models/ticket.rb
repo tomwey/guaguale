@@ -20,7 +20,8 @@ class Ticket < ActiveRecord::Base
   
   before_save :create_token   
   
-  scope :actived, where(:active => true)                                                 
+  scope :actived, where(:active => true)   
+  scope :unactive, where(:active => false)                                              
   
   
   def self.search(search)
@@ -33,6 +34,20 @@ class Ticket < ActiveRecord::Base
   
   def state
     active? ? '已消费' : '未消费'
+  end
+  
+  def as_json(options={})
+    # super({:only => [:id, :token, :expire_start_at, :expire_end_at]})
+    # .merge(thumb_image_url: avatar.url(:small), release_on: created_at.to_date)
+    {
+      :id => id, 
+      :token => token, 
+      :expire_start_at => expire_start_at, 
+      :expire_end_at => expire_end_at,
+      :release_on => created_at.to_date,
+      :thumb_image_url => avatar.url(:small),
+      :large_image_url => avatar.url(:medium)
+    }
   end
   
   private 

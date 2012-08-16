@@ -5,13 +5,20 @@ class Cpanel::TicketsController < Cpanel::BaseController
   
   before_filter :find_ticket, :only => [:show, :edit, :update, :destroy]
   def index
-    @tickets = Ticket.order("created_at desc").search(params[:search]).paginate(page: params[:page], per_page: 5)
+    @tickets = Ticket.order("created_at desc").paginate(page: params[:page], per_page: 5)
   end
   
   def show
   end
   def new
     @ticket = Ticket.new
+  end
+  
+  def search
+    @tickets = Ticket.order("created_at desc")
+                     .search(params[:search])
+                     .paginate(:page => params[:page], :per_page => 5)
+    render :action => 'index'
   end
 
   def edit

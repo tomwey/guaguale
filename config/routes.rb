@@ -2,7 +2,7 @@ Guaguale::Application.routes.draw do
   
   namespace :api do 
     namespace :v1 do
-      resources :tickets
+      resources :tickets, :only => :index
     end
   end
   
@@ -18,8 +18,15 @@ Guaguale::Application.routes.draw do
   root to:'home#index'
   
   namespace :cpanel do
+    
     root to:'home#index'
-    resources :tickets
+    
+    resources :tickets do 
+      collection do
+        get 'search'
+      end
+      
+    end
     resources :customers
   end
 
