@@ -8,7 +8,7 @@ module Api
       
       def index
         
-        @tickets = Ticket.unactive.order("RANDOM()").uniq.limit(9)
+        @tickets = Ticket.unactive.order("RAND()").uniq.limit(9)
         
         respond_with(@tickets)
       end
