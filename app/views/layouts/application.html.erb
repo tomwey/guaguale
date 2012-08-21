@@ -6,9 +6,13 @@
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<%= render 'layouts/shim' %>
+	<style type="text/css">
+		body {
+			background: #aaa;
+		}
+	</style>
 </head>
 <body>
-	<%= render 'layouts/header1' %>
 	<div class="container">
 				<% flash.each do |key,msg| %>
 					<div class="alert alert-<%= key%>">
@@ -17,6 +21,5 @@
 				<% end %>
 				<%= yield %>
 	</div>
-	<%= render 'layouts/footer' %>
 </body>
 </html>

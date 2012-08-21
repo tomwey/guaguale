@@ -2,7 +2,7 @@
 	<div class="span4 offset4 well">
 		<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 			<fieldset>
-				<legend>登录</legend>
+				<legend>刮刮乐后台管理系统</legend>
 				<div class="control-group">
 					<%= f.label :email, "邮箱", class:"control-label" %>
 					<div class="controls">
@@ -14,7 +14,7 @@
 				  	<%= f.password_field :password %>
 					</div>
 					<div class="controls">
-						<%= f.submit "登录", class:"btn btn-primary" %>
+						<%= f.submit "登录", class:"btn btn-danger btn-primary btn-large" %>
 					</div>
 				</div>
 			</fieldset>
