@@ -2,8 +2,6 @@ module Api
   module V1
     class TicketsController < ApplicationController
       
-      http_basic_authenticate_with :name => "keke", :password => "keke-guagua"
-      
       respond_to :json
       
       def index
@@ -11,6 +9,7 @@ module Api
         @tickets = Ticket.unactive.order("RAND()").uniq.limit(9)
         
         respond_with(@tickets)
+        
       end
       
     end

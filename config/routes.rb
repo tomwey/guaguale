@@ -15,7 +15,7 @@ Guaguale::Application.routes.draw do
                               :sign_up => 'register'
                             }
   
-  root to:'home#index'
+  # root to:'home#index'
   
   namespace :cpanel do
     
