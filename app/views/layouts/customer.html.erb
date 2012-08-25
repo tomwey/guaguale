@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>刮刮乐商家后台验证系统</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= csrf_meta_tags %>
+	<%= render 'layouts/shim' %>
+	
+	<style>
+		body {
+				background: -webkit-gradient(radial, center center, 0, center center, 460, 								
+						from(#1a82f7), to(#2F2727));
+				background: -webkit-radial-gradient(circle, #ff9320, #d36702);
+				background: -moz-radial-gradient(circle, #1a82f7, #2F2727);
+				background: -ms-radial-gradient(circle, #1a82f7, #2F2727);
+		}
+	</style>
+	
+</head>
+<body>
+
+	<div class="container">
+		<div class="row customer-form">
+			<%= image_tag('logo.png') %>
+			<%= yield %>
+		</div>
+		<%= render 'layouts/customer/links' %>
+	</div>
+	<%= javascript_include_tag "application" %>
+</body>
+</html>

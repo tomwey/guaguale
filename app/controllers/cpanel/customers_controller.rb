@@ -15,7 +15,7 @@ class Cpanel::CustomersController < Cpanel::BaseController
   def create
     @customer = Customer.new(params[:customer])
     if @customer.save
-      flash[:success] = "添加商家成功."
+      flash[:success] = "添加商家成功！商家登录密码：#{@customer.password}"
       redirect_to cpanel_customers_url
     else
       render 'new'

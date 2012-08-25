@@ -1,0 +1,51 @@
+<div class="row">
+	<div class="span6 offset3 well">
+		<%= form_for(resource, :as => resource_name, 
+									:url => session_path(resource_name),
+									:html => { :class => "form-horizontal" }) do |f| %>
+			<fieldset>
+				<legend>刮刮乐后台管理系统</legend><br/>
+				<% flash.each do |key,msg| %>
+					<div class="alert alert-<%= key%> flash">
+						<a class="close" href="#" data-dismiss="alert">&times;</a><%= msg %>
+					</div>
+				<% end %>
+				<div class="control-group">
+					<%= f.label :email, "邮箱", class:"control-label" %>
+					<div class="controls">
+						<%= f.email_field :email %>
+					</div>
+				</div>
+					
+				<div class="control-group">
+					<%= f.label :password, "密码", class:"control-label" %>
+					<div class="controls">
+				  	<%= f.password_field :password %>
+					</div>
+				</div>
+				
+				<% if devise_mapping.rememberable? -%>
+						<div class="control-group">
+							<div class="controls">
+								<label for="user_remember_me" class="checkbox">
+									<%= f.check_box :remember_me, 
+									:style => "width:auto;" %> 记住登录状态</label>
+								</label>
+							</div>
+						</div>
+				<% end -%>
+				
+					<div class="controls">
+						<%= f.submit "登录", class:"btn btn-danger btn-primary btn-large" %>
+					</div>
+				</div>
+			</fieldset>
+		<% end %>
+	</div>
+	<!-- <div class="span3">
+		<p>还没有账号？</p>
+		<%= render :partial => "devise/shared/links" %>
+	</div> -->
+</div>
+
+
