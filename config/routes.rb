@@ -19,7 +19,15 @@ Guaguale::Application.routes.draw do
   root :to => redirect('/account/login')
   
   match '/merc' => redirect('/merc/login'), :as => 'merc'
-  match '/merc/dashboard' => 'customers#dashboard', :as => 'dashboard'
+  # match '/merc/dashboard' => 'customers#dashboard', :as => 'dashboard'
+  
+  namespace :dashboard do
+    root to:'customers#active'
+    match '/active' => 'customers#active', :as => 'active', :via => 'get'
+    match '/verify' => 'customers#verify', :as => 'verify', :via => :put
+    match '/actived_tickets' => 'customers#actived_tickets', :as => 'actived_tickets'
+    
+  end
   
   namespace :cpanel do
     

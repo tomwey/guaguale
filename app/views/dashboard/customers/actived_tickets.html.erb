@@ -1,0 +1,36 @@
+<div class="well">
+	
+<h2 class="page-header">已经消费的奖券</h2>
+
+<%= will_paginate @tickets %>
+
+<table class="table table-striped">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>消费码</th>
+			<th>广告图片</th>
+			<th>有效期开始日</th>
+			<th>有效期截止日</th>
+			<th>奖券添加日期</th>
+		</tr>
+	</thead>
+	<tbody>
+		<% @tickets.each do |ticket| %>
+			<tr>
+				<td><%= link_to ticket.id, [:cpanel, ticket] %></td>
+				<td><%= ticket.token %></td>
+				<td>
+					<% if ticket.avatar.exists? %>
+						<%= image_tag(ticket.avatar.url(:thumb)) %>
+					<% end %>
+				</td>
+				<td><%= ticket.expire_start_at %></td>
+				<td><%= ticket.expire_end_at %></td>
+				<td><%= ticket.created_at %></td>
+			</tr>
+		<% end %>
+	</tbody>
+</table>
+
+</div>

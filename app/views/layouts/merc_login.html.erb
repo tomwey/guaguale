@@ -10,23 +10,9 @@
 	
 </head>
 <body>
-	
-	<div id="header">
-		<div class="container">
-			<%= render 'layouts/customer/head' %>
-		</div>
-	</div>
 		
 	<div class="container">
-		
-		<div class="row">
-			<div class="span2">
-				<%= render 'layouts/customer/sidebar' %>
-			</div>
-			<div class="span9">
-				<%= yield %>
-			</div>
-		</div>
+		<%= yield %>
 	</div>
 	
 	<%= render 'layouts/customer/links' %>

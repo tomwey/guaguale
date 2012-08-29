@@ -1,0 +1,12 @@
+<div class="well sidebar-nav">  
+  <ul class="nav nav-list">  
+    <li class="nav-header"><%= current_customer.try(:comp_name) %></li>  
+		<li class="divider"></li>
+    <li><%= link_to '验证刮刮券', dashboard_active_path %></li>  
+    <li><%= link_to '查看已消费的刮刮券', dashboard_actived_tickets_path %></li>
+		<li><%= link_to '合作项目', '#' %></li> 
+		<li class="divider"></li> 
+		<li><%= link_to '修改密码', edit_customer_registration_path %></li>
+		<li><%= link_to '客服电话', '#' %></li>
+ 	</ul>  
+</div>
