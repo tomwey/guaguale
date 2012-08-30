@@ -10,12 +10,13 @@ class User < ActiveRecord::Base
   
   validates :name, presence: true
   
-  EMAILS = %w["tomwey@163.com", "493083207@qq.com"]
+  EMAILS = ["tomwey@163.com", "493083207@qq.com"]
   
   # 是否是管理员
   def admin?
     #EMAILS.include?(self.email)
-    self.email == "tomwey@163.com"
+    return true if EMAILS.include?(self.email)
+    return false
   end
   
   def merchant?

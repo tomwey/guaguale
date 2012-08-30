@@ -29,6 +29,10 @@ namespace :deploy do
     run "touch #{current_path}/tmp/restart.txt"
   end
   
+  task :seed do  
+      run "cd #{current_path}; rake db:seed RAILS_ENV=production"  
+  end
+  
   # desc "Symlink shared resources on each release - not used"
   # task :symlink_shared, :roles => :app do
   #   run "ln -nfs #{shared_path}/config/database.yml #{release_path}/config/database.yml"
