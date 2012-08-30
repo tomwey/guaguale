@@ -13,7 +13,7 @@ Guaguale::Application.routes.draw do
   devise_for :users, 
              :path => 'account', 
              :path_names => { :sign_in => 'login', :sign_out => 'logout' },
-             :controllers => { :sessions => 'users/sessions' }
+             :controllers => { :registrations => "users/registrations",:sessions => 'users/sessions' }
   
     
   root :to => redirect('/account/login')
