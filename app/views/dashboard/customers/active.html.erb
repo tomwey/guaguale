@@ -1,19 +1,29 @@
 <div class="well">
 	<h2 class="page-header">验证刮刮券</h2>
 	
-	<%= form_for(:ticket, :url => dashboard_verify_path, :html => { :method => :put, :class => 'offset3' }) do |f| %>
-		<p>
-			<%= f.label :token, "输入消费码" %>
-			<%= f.text_field :token,  size: 40 %>
-		</p>
+	<%= form_for(:ticket, :url => dashboard_verify_path, :html => { :method => :put, :class => 'offset1 form-horizontal' }) do |f| %>
+		<div class="control-group">
+			<%= f.label :token, "输入消费码", class:'control-label' %>
+			<div class="controls">
+				<%= f.text_field :token, class:'span3' %>
+			</div>
+			<div class="controls">
+				<%= f.submit '  消费  ', class:'btn btn-success btn-large btn-primary' %>
+			</div>
+		</div>
 		
-		<%= f.submit '  消费  ', class:'btn btn-success btn-large btn-primary' %>
 	<% end %>
 	
-	<% flash.each do |key,msg| %>
-		<div class="alert alert-<%= key%>">
-			<a class="close" href="#" data-dismiss="alert">&times;</a><%= msg %>
-		</div>
+	<br />
+	<br />
+	
+	<% if flash[:message] %>
+	<% flash[:message].each do |key, value| %>
+	<div class="alert alert-block alert-<%= key %>">
+	  <button type="button" class="close" data-dismiss="alert">×</button>
+	  <strong><%= value %></strong>
+	</div>
+	<% end %>
 	<% end %>
 	
 </div>

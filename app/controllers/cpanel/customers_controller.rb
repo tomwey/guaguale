@@ -37,6 +37,12 @@ class Cpanel::CustomersController < Cpanel::BaseController
     
   end
   
+  def destroy
+    @customer.destroy
+    flash[:success] = '商家删除成功.'
+    redirect_to cpanel_customers_url
+  end
+  
   private 
   
   def find_customer

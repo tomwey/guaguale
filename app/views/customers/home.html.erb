@@ -1,1 +1,9 @@
+<% content_for :flash do %>
+	<% flash.each do |key,msg| %>
+		<div class="alert alert-<%= key%>">
+			<a class="close" href="#" data-dismiss="alert">&times;</a><%= msg %>
+		</div>
+	<% end %>
+<% end %>
+
 <%= render 'customers/shared/login_form' %>

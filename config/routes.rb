@@ -8,12 +8,16 @@ Guaguale::Application.routes.draw do
   
   devise_for :customers, :path => 'merc', 
              :path_names => { :sign_in => 'login', :sign_out => 'logout' },
-             :controllers => { :registrations => "customers", 
+             :controllers => { :registrations => "customers/registrations", 
+                               :passwords => "customers/passwords", 
                                :sessions => 'customers/sessions' }  
+  match '/merc/edit' => 'customers/passwords#edit', :as => 'edit_merc', :via => :get
+  
   devise_for :users, 
              :path => 'account', 
              :path_names => { :sign_in => 'login', :sign_out => 'logout' },
-             :controllers => { :registrations => "users/registrations",:sessions => 'users/sessions' }
+             :controllers => { :registrations => "users/registrations",
+                               :sessions => 'users/sessions' }
   
     
   root :to => redirect('/account/login')
@@ -25,7 +29,8 @@ Guaguale::Application.routes.draw do
     root to:'customers#active'
     match '/active' => 'customers#active', :as => 'active', :via => 'get'
     match '/verify' => 'customers#verify', :as => 'verify', :via => :put
-    match '/actived_tickets' => 'customers#actived_tickets', :as => 'actived_tickets'
+    match '/actived_tickets' => 'customers#actived_tickets', 
+      :as => 'actived_tickets'
     
   end
   
