@@ -8,8 +8,7 @@ Guaguale::Application.routes.draw do
   
   devise_for :customers, :path => 'merc', 
              :path_names => { :sign_in => 'login', :sign_out => 'logout' },
-             :controllers => { :registrations => "customers/registrations", 
-                               :passwords => "customers/passwords", 
+             :controllers => { :registrations => "customers/registrations",  
                                :sessions => 'customers/sessions' }  
   match '/merc/edit' => 'customers/passwords#edit', :as => 'edit_merc', :via => :get
   

@@ -1,7 +1,7 @@
 # coding: utf-8
 require 'bundler/capistrano'
 
-set :keep_releases, 5
+set :keep_releases, 10
 set :application, "guaguale"
 set :repository, "git://github.com/tomwey/guaguale.git"
 set :branch, "master"
@@ -40,4 +40,4 @@ namespace :deploy do
       
 end
 
-#after 'deploy:update_code', 'deploy:symlink_shared'
+#after 'deploy:update', 'deploy:cleanup'
