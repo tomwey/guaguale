@@ -14,5 +14,6 @@
 /log/*.log
 /tmp
 .bundle\n
-/public/system
+/public/system/*
+/public/assets/*
 config/database.yml
