@@ -25,5 +25,5 @@ production:
   database: guaguale_production
   pool: 5
   username: root
-  password: 'Tomwey860818'
+  password: 'tomwey860818'
   host: localhost
