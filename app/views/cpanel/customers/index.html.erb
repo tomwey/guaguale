@@ -9,6 +9,7 @@
 		<tr>
 			<th>ID</th>
 			<th>商家名称</th>
+			<th>公司名称</th>
 			<th>联系电话</th>
 			<th>商家地址</th>
 			<th>已经激活的奖券数</th>
@@ -20,6 +21,7 @@
 			<tr>
 				<td><%= link_to customer.id, [:cpanel, customer] %></td>
 				<td><%= customer.name %></td>
+				<td><%= customer.comp_name %></td>
 				<td><%= customer.tel %></td>
 				<td><%= customer.address %></td>
 				<td><%= customer.tickets.actived.size %></td>
