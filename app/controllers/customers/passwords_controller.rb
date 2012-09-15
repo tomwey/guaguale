@@ -1,3 +1,4 @@
+# encoding:utf-8
 class Customers::PasswordsController < ApplicationController
   before_filter :authenticate_customer!
   layout 'customer'
