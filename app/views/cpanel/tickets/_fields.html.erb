@@ -11,7 +11,7 @@
 	<%= f.label :customer_id, '商家名称', class:"control-label" %>
 	<div class="controls">
 		<% if Customer.all.size > 0 %>
-		<%= f.collection_select :customer_id, Customer.all, :id, :name %>
+		<%= f.collection_select :customer_id, Customer.all, :id, :comp_name %>
 		<% else %>
 			<%= link_to '添加一个商家', new_cpanel_customer_path, class:"btn btn-primary" %>
 		<% end %>
