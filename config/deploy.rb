@@ -1,5 +1,6 @@
 # coding: utf-8
 require 'bundler/capistrano'
+require 'capistrano_database'
 
 set :keep_releases, 10
 set :application, "guaguale"
@@ -40,4 +41,4 @@ namespace :deploy do
       
 end
 
-#after 'deploy:update', 'deploy:cleanup'
+# after 'deploy:update', 'deploy:cleanup'
