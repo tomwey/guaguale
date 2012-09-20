@@ -3,7 +3,6 @@
 <head>
   <title>欢迎光临刮刮乐后台管理系统</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<%= render 'layouts/shim' %>
 </head>
@@ -25,6 +24,8 @@
 		</div>
 		<%= render 'layouts/footer' %>
 	</div>
+	
+	<%= javascript_include_tag "application" %>
 	<!-- <%= render 'layouts/bootstrap_script' %> -->
 	<script type="text/javascript">
 		$('.datepicker').datepicker({

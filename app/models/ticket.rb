@@ -10,7 +10,7 @@ class Ticket < ActiveRecord::Base
                                           # :url => "/files/:id/:style"
                                           
   validates_attachment :avatar, presence: true,
-                                content_type: { content_type: "image/jpeg" },
+                                content_type: { content_type: ["image/jpeg","image/png","image/gif"] },
                                 size: { in: 0..300.kilobytes }
   
   validates :expire_end_at, presence: true

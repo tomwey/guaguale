@@ -26,3 +26,6 @@ gem 'capistrano'
 #gem 'capistrano-ext'
 #gem 'libv8', '3.3.10.4'
 
+gem 'bullet', group: :development
+gem 'rack-mini-profiler', group: :development
+

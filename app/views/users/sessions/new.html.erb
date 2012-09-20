@@ -35,7 +35,11 @@
 							
 							<div class="controls">
 								<%= f.submit "  登录  ", class:"btn btn-success btn-large" %>
+								<%- if devise_mapping.recoverable? && controller_name != 'passwords' %>
+								  <%= link_to "忘记了密码?", new_password_path(resource_name) %><br />
+								<% end -%>
 							</div>
+							
 						</div>
 				<% end -%>
 			</fieldset>

@@ -3,7 +3,6 @@
 <head>
   <title>刮刮乐成都站,刮出您每天的惊喜,刮出您每天的欢乐。</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 	<%= render 'layouts/shim' %>
 	<style type="text/css">
@@ -21,5 +20,7 @@
 				<% end %>-->
 				<%= yield %>
 	</div>
+	
+	<%= javascript_include_tag "application" %>
 </body>
 </html>
