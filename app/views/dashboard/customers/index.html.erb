@@ -1,7 +1,7 @@
 <div class="well">
 	<h2 class="page-header">验证刮刮券</h2>
 	
-	<%= form_for(:ticket, :url => dashboard_verify_path, :html => { :method => :put, :class => 'offset1 form-horizontal' }) do |f| %>
+	<%= form_for(:ticket, :url => dashboard_active_ticket_path, :html => { :method => :put, :class => 'offset1 form-horizontal' }) do |f| %>
 		<div class="control-group">
 			<%= f.label :token, "输入消费码", class:'control-label' %>
 			<div class="controls">

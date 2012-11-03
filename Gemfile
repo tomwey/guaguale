@@ -9,8 +9,16 @@ gem 'paperclip', '~> 3.0'
 gem 'devise', '~> 2.1.0.rc'
 gem 'cancan'
 
+gem 'settingslogic'
+
+gem 'redis-namespace'
+gem 'redis-objects'
+gem 'resque', :require => 'resque/server'
+gem 'resque_mailer'
+
 group :production do 
-	gem 'mysql2', '0.3.11'
+	# gem 'mysql2', '0.3.11'
+	gem 'pg'
 end
 
 group :assets do

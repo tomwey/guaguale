@@ -25,7 +25,7 @@ Guaguale::Application.configure do
 
   # Specifies the header that your server uses for sending files
   # config.action_dispatch.x_sendfile_header = "X-Sendfile" # for apache
-  # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
+  config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
   # config.force_ssl = true
@@ -50,6 +50,19 @@ Guaguale::Application.configure do
 
   # Disable delivery errors, bad email addresses will be ignored
   # config.action_mailer.raise_delivery_errors = false
+  
+  # email
+  config.action_mailer.default_url_options = { :host => Settings.domain }
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = {
+    address: "smtp.gmail.com",
+    port: 587,
+    domain: Settings.domain,
+    authentication: "plain",
+    enable_starttls_auto: true,
+    user_name: Settings.email_sender,
+    password: "KeKeStudio2012"
+  }
 
   # Enable threaded mode
   # config.threadsafe!

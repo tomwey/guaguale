@@ -6,7 +6,8 @@ module Api
       
       def index
         
-        @tickets = Ticket.unactive.order("RAND()").uniq.limit(9)
+        offset = params[:offset] || 3
+        @tickets = Ticket.unactive.order("RAND()").uniq.limit(offset)
         
         respond_with(@tickets)
         

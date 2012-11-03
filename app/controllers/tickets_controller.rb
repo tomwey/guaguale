@@ -2,6 +2,7 @@
 class TicketsController < ApplicationController
   
   def active
+    
   end
   
   def verify

@@ -25,12 +25,13 @@ Guaguale::Application.routes.draw do
   # match '/merc/dashboard' => 'customers#dashboard', :as => 'dashboard'
   
   namespace :dashboard do
-    root to:'customers#active'
-    match '/active' => 'customers#active', :as => 'active', :via => 'get'
-    match '/verify' => 'customers#verify', :as => 'verify', :via => :put
-    match '/actived_tickets' => 'customers#actived_tickets', 
-      :as => 'actived_tickets'
+    root to:'customers#index'
     
+    match 'tickets/active' => 'tickets#active', :via => :put, :as => :active_ticket
+    
+    resources :tickets do
+      get 'actived', :on => :collection
+    end
   end
   
   namespace :cpanel do
@@ -45,5 +46,7 @@ Guaguale::Application.routes.draw do
     end
     resources :customers
   end
+  
+  mount Resque::Server, :at => '/resque'
 
 end

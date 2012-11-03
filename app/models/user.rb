@@ -10,12 +10,12 @@ class User < ActiveRecord::Base
   
   validates :name, presence: true
   
-  EMAILS = ["tomwey@163.com", "493083207@qq.com"]
+  # EMAILS = ["tomwey@163.com", "493083207@qq.com"]
   
   # 是否是管理员
   def admin?
     #EMAILS.include?(self.email)
-    return true if EMAILS.include?(self.email)
+    return true if Settings.admin_emails.include?(self.email)
     return false
   end
   

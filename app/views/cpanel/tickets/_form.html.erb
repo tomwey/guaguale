@@ -8,7 +8,7 @@
 				<div class="control-group">
 				<%= render 'fields', :f => f %>
 				<div class="controls">
-				<%= f.submit submit_value, class: "btn btn-primary" %>
+				<%= f.submit submit_value, class: "btn btn-primary", :disable_with => "正在提交..." %>
 				<!-- <a href="javascript:history.go(-1)" class="btn">返回</a> -->
 				<%= link_to '返回', cpanel_tickets_path, class:"btn" %>
 				</div>

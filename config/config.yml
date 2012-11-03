@@ -1,0 +1,17 @@
+defaults: &defaults
+  app_name: "刮刮看"
+  domain: "127.0.0.1:8888"
+  admin_emails: "tomwey@163.com"
+  email_sender: "kekestudio.com@gmail.com"
+  merc_login_url: "http://localhost:8888/merc"
+
+  
+  
+development:
+  <<: *defaults
+
+test:
+  <<: *defaults
+    
+production:
+  <<: *defaults
