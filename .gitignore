@@ -16,4 +16,3 @@
 .bundle\n
 /public/system/*
 /public/assets/*
-config/database.yml
