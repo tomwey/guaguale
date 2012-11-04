@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'rails', '3.2.7'
 
-gem 'sqlite3'
+gem 'sqlite3', group: :development
 gem 'dynamic_form'
 gem 'will_paginate', '3.0.3'
 gem 'paperclip', '~> 3.0'
