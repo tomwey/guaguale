@@ -47,6 +47,6 @@ Guaguale::Application.routes.draw do
     resources :customers
   end
   
-  mount Resque::Server, :at => '/resque'
+  # mount Resque::Server, :at => '/resque'
 
 end
