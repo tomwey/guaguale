@@ -11,10 +11,10 @@ gem 'cancan'
 
 gem 'settingslogic'
 
-gem 'redis-namespace'
-gem 'redis-objects'
-gem 'resque', :require => 'resque/server'
-gem 'resque_mailer'
+# gem 'redis-namespace'
+# gem 'redis-objects'
+# gem 'resque', :require => 'resque/server'
+# gem 'resque_mailer'
 
 group :production do 
 	# gem 'mysql2', '0.3.11'
@@ -30,7 +30,7 @@ end
 
 gem 'jquery-rails'
 
-gem 'capistrano'
+#gem 'capistrano'
 #gem 'capistrano-ext'
 #gem 'libv8', '3.3.10.4'
 
